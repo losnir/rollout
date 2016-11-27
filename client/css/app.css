@@ -1,0 +1,50 @@
+body {
+  padding-top: 50px;
+}
+
+.main-content {
+   margin: 0 auto;
+   width: 50%;
+}
+
+.main-app {
+   margin-bottom: 6px;
+}
+
+.main-app ul {
+   list-style-position: inside;
+}
+
+.main-app .list-group > .list-group-item {
+
+}
+
+.main-app .list-group > .list-group-item.input-group {
+   padding: 0;
+   border: 0;
+
+
+}
+
+.main-app .list-group > .list-group-item.input-group:not(:last-child) input {
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+}
+
+
+.main-app .list-group > .list-group-item.input-group:not(:last-child) button {
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+}
+
+
+
+
+.main-app .list-group > .list-group-item .btn-group {
+   opacity: 0;
+   transition: opacity 0.2s ease-out;
+}
+
+.main-app .list-group > .list-group-item:hover .btn-group {
+   opacity: 1;
+}
