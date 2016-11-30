@@ -14,36 +14,72 @@ define([
       
       template: _.template(template),
 
+      events: {
+         "click .item-add .add": "create"
+      },
+      
       initialize: function() {
+         // Start by rendering the view.
+         this.render();
+
+         // Store jQuery DOM references for easer access.
+         this.$items = this.$('.items');
+         this.$input = this.$('.item-add input.name');
+
+         // Initlize a new AppUser's collection.
          this.users = new AppUserCollection();
 
-         this.listenTo(this.users, 'reset', this.renderCollection);
-
-
+         // Register model event handlers.
+         this.listenTo(this.users, 'add', this.addSingleItem);
+         this.listenTo(this.users, 'reset', this.addCollection);
 
          // Fetch & update the collection as a bulk operation using the `reset` attribute.
          this.users.fetch({ reset: true });
-
-         this.render();
       },
 
+      /**
+       * Render the view using the supplied template.
+       */
       render: function() {
          this.$el.html(this.template({}));
       },
 
-      renderSingleItem: function(AppUser) {
-         var item = new AppUserItemView({ model: AppUser });
-         this.$el.find('.list-group')[0].append(item.render().el);
+      /**
+       * Render a single AppUser instance.
+       */
+      addSingleItem: function(AppUser) {
+         if(AppUser.isValid(true)) {
+            var item = new AppUserItemView({ model: AppUser });
+            this.$items.append(item.render().$el);
+         }
+         else console.warn("Skipped an invalid AppUser item!", AppUser);
       },
 
-      renderCollection: function() {
-         this.render();
-         this.users.each(this.renderSingleItem, this);
+      /**
+       * Render the AppUser's collection.
+       * All previosuly rendered instances will be destroyed from the view.
+       */
+      addCollection: function() {
+         this.$items.remove(".item");
+         this.users.each(this.addSingleItem, this);
       },
 
-      teardown: function() {
-         while(this.el.firstChild)
-            this.el.removeChild(this.el.firstChild);
+      /*
+       * Create and add a new AppUser to the collection.
+       */
+      create: function() {
+         var name = this.$input.val();
+
+         if(name) {
+            var user = this.users.create({ name: name }, { wait: true });
+            
+            if(!user.isValid()) {
+               var error = user.validationError ? _.values(user.validationError).join(', ') : "Unknown";
+               alert("An error occured while saving: " + error);
+            }
+         }
+
+         this.$input.val('');
       }
 
    });

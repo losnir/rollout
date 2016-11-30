@@ -1,7 +1,6 @@
-<%= name %>
-
+<span><%- name %></span>
 <div class="btn-group btn-group-xs pull-right" role="group">
-   <button type="button" class="btn btn-primary">
+   <button type="button" class="btn edit btn-primary">
       <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
    </button>
    <button type="button" class="btn remove btn-default">

@@ -1,4 +1,6 @@
 /**
+ * This is the AppUser collection.
+ *
  * @author Nir Azuelos
  */
 define(['models/AppUser', 'backbone'], function(AppUserModel, Backbone) {

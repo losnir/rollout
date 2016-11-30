@@ -11,34 +11,24 @@ body {
    margin-bottom: 6px;
 }
 
-.main-app ul {
-   list-style-position: inside;
+.main-app .list-group {
+   margin-bottom: 0;
 }
 
-.main-app .list-group > .list-group-item {
-
-}
-
-.main-app .list-group > .list-group-item.input-group {
+.main-app .list-group-item.item-add {
    padding: 0;
    border: 0;
-
-
 }
 
-.main-app .list-group > .list-group-item.input-group:not(:last-child) input {
+.main-app .list-group-item.item-add:not(:last-child) > .input-group input {
    border-bottom-left-radius: 0;
    border-bottom-right-radius: 0;
 }
 
-
-.main-app .list-group > .list-group-item.input-group:not(:last-child) button {
+.main-app .list-group-item.item-add:not(:last-child) > .input-group button {
    border-bottom-left-radius: 0;
    border-bottom-right-radius: 0;
 }
-
-
-
 
 .main-app .list-group > .list-group-item .btn-group {
    opacity: 0;

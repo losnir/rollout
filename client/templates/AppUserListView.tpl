@@ -1,18 +1,13 @@
 <div class="items list-group">
-   <div class="list-group-item input-group">
-
+   <div class="list-group-item item-add">
       <div class="input-group">
-         <input type="text" class="form-control" placeholder="Type full name..." />
+         <input type="text" class="form-control name" placeholder="Type full name..." />
 
          <span class="input-group-btn">
-            <button type="button" class="btn remove btn-primary">
+            <button type="button" class="btn add btn-primary">
                Add
             </button>
          </span>
       </div>
-
    </div>
-
 </div>
-
-Test
