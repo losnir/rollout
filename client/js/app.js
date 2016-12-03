@@ -1,7 +1,7 @@
 /**
-* This is the main etnry point for the front end.
-* @author Nir Azuelos
-*/
+ * This is the main etnry point for the front end.
+ * @author Nir Azuelos
+ */
 
 // Configure RequireJS (path, shim).
 require.config({

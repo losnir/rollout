@@ -1,3 +1,7 @@
 {
-  "extends": "loopback"
+  "extends": "loopback",
+   "rules": {
+      "keyword-spacing": ["error", { before: true, after: false }],
+      "indent": ["error", 3]
+   }
 }
