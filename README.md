@@ -1,3 +1,5 @@
+![Travis CI](https://travis-ci.org/losnir/rollout.svg?branch=master)
+
 # Rollout Assignment
 
 ## Running
