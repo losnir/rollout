@@ -1,4 +1,4 @@
-![Travis CI](https://travis-ci.org/losnir/rollout.svg?branch=master)
+[![Travis CI](https://travis-ci.org/losnir/rollout.svg?branch=master "Travis CI")](https://travis-ci.org/losnir/rollout)
 
 # Rollout Assignment
 
