@@ -15,6 +15,23 @@ body {
    margin-bottom: 0;
 }
 
+.main-app .list-group-item.no-items {
+   display: none;
+   margin: 0;
+   padding: 0;
+}
+
+.main-app .list-group-item.no-items .alert {
+   margin: 0;
+   padding: 12px;
+   border: 0;
+   border-radius: 0;
+}
+
+.main-app .list-group-item.no-items:last-child {
+   display: block;
+}
+
 .main-app .list-group-item.item-add {
    padding: 0;
    border: 0;

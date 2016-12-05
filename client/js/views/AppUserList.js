@@ -68,7 +68,7 @@ define([
        * Create and add a new AppUser to the collection.
        */
       create: function() {
-         var name = this.$input.val();
+         var name = this.$input.val().trim();
 
          if(name) {
             var user = this.users.create({ name: name }, { wait: true });
